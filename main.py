@@ -1,3 +1,4 @@
+
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
@@ -78,3 +79,10 @@ print(ThisWeek)
 
 # Print the 2D array as a table
 print(tabulate(ThisWeek, headers=['Collection Date', 'Bin Type'], tablefmt='orgtbl'))
+
+#export
+array_str = '\n'.join(['~'.join([str(elem) for elem in row]) for row in ThisWeek])
+
+# Write the string representation to a file
+with open('ThisWeek.txt', 'w') as f:
+    f.write(array_str)
